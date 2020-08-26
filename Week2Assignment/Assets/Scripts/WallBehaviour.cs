@@ -1,5 +1,4 @@
-﻿using System.Dynamic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WallBehaviour : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class WallBehaviour : MonoBehaviour
     public int CurrentHitPoints { set { currentHitPoints = value; } get { return currentHitPoints; } }
 
 
-    void Start()
+    private void Start()
     {
         //TODO set wall to wood if null;
         GetComponent<Renderer>().material = typeOfWall.material;
@@ -17,7 +16,7 @@ public class WallBehaviour : MonoBehaviour
         currentHitPoints = typeOfWall.hitPoints;
     }
 
-    void Update()
+    private void LateUpdate()
     {
         if(CurrentHitPoints <= 0)
         {

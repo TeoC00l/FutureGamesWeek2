@@ -1,80 +1,71 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
+using UnityEngine;
 
 public class RayShooter : MonoBehaviour
 {
-    private WallBehaviour[] sortedWalls;
+    private LinkedList<WallBehaviour> objectsInTrajectory;
+    private bool isShooting = false;
     [SerializeField] private int damage = 10;
 
-    void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        //Since neither the walls or shooter moves in this scenario, objects in trajectory only has to be calculated at start instead of at Shoot().
+        UpdateTrajectory(Physics.RaycastAll(transform.position, transform.forward, Mathf.Infinity));
+    }
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) 
         {
             Shoot();
         }
-
     }
+    
     private void Shoot()
     {
         int remainingDamage = damage;
-
-        sortByDistance(Physics.RaycastAll(transform.position, transform.forward, Mathf.Infinity));
-
-        while (remainingDamage > 0 && sortedWalls.Length > 0)
+        
+        while (remainingDamage > 0 && objectsInTrajectory.Count > 0)
         {
-            Debug.Log("yes");
-            int hitPoints = sortedWalls[0].CurrentHitPoints;
-
-            if (remainingDamage >= hitPoints)
+            WallBehaviour current = objectsInTrajectory.First.Value;
+            int hitPoints = current.CurrentHitPoints;
+            
+            if (hitPoints <= remainingDamage)
             {
-                sortedWalls[0].CurrentHitPoints = 0;
-                removeFirstIndex();
+                objectsInTrajectory.RemoveFirst();
             }
-            else
-            {
-                sortedWalls[0].CurrentHitPoints -= remainingDamage;
-            }
-
+            
+            current.CurrentHitPoints -= remainingDamage;
             remainingDamage -= hitPoints;
         }
     }
 
-    private void sortByDistance(RaycastHit[] hits)
+    private void UpdateTrajectory(RaycastHit[] hits)
     {
-        if (hits.Length == 0)
-        {
-            return;
-        }
-
-        sortedWalls = new WallBehaviour[hits.Length];
+        objectsInTrajectory= new LinkedList<WallBehaviour>();
+        Vector3 shooterPosition = transform.position;
 
         //Selection sort
         for (int i = 0; i < hits.Length; i++)
         {
-            float smallestDistance = Vector3.Distance(transform.position, hits[i].transform.position);
-            sortedWalls[i] = sortedWalls[i] = hits[i].collider.gameObject.GetComponent<WallBehaviour>();
+            float smallestDistance = Vector3.Distance(shooterPosition, hits[i].transform.position);
 
-            for (int j = i+1; j < hits.Length; j++)
+            for (int j = i + 1; j < hits.Length; j++)
             {
-                float currentObjectDistance = Vector3.Distance(transform.position, hits[j].transform.position);
+                float currentObjectDistance = Vector3.Distance(shooterPosition, hits[j].transform.position);
 
                 if (smallestDistance > currentObjectDistance)
                 {
                     smallestDistance = currentObjectDistance;
-                    sortedWalls[i] = hits[j].collider.gameObject.GetComponent<WallBehaviour>();
+                    RaycastHit cached = hits[i];
+                    hits[i] = hits[j];
+                    hits[j] = cached;
                 }
             }
+            
+            //After every iteration, add smallest object to sorted linked list.
+            objectsInTrajectory.AddLast(hits[i].collider.gameObject.GetComponent<WallBehaviour>());
         }
     }
-
-    private void removeFirstIndex()
-    {
-        WallBehaviour[] newArray = new WallBehaviour[sortedWalls.Length-1];
-
-        for (int i = 1; i <= sortedWalls.Length; i++)
-        {
-            newArray[i-1] = sortedWalls[i];
-        }
-
-        sortedWalls = newArray;
-    }
-}
+}    
