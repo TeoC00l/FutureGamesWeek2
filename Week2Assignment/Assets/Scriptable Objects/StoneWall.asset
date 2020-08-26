@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0210168f4820a3342bf87f3bd698b5c3, type: 3}
   m_Name: StoneWall
   m_EditorClassIdentifier: 
-  hitPoints: 12
+  hitPoints: 15
   onDeathSound: {fileID: 8300000, guid: 6d5c4a44342394747bdccf4f2b6de644, type: 3}
   material: {fileID: 2100000, guid: 9d6998ec190f66f49a9cb2e0b2dd2523, type: 2}

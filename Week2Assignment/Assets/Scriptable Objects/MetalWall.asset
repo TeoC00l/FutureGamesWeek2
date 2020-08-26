@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0210168f4820a3342bf87f3bd698b5c3, type: 3}
   m_Name: MetalWall
   m_EditorClassIdentifier: 
-  hitPoints: 15
+  hitPoints: 20
   onDeathSound: {fileID: 8300000, guid: 52e838423e671c246b0bf221a0fd4e06, type: 3}
   material: {fileID: 2100000, guid: 1f42cb977639b80499ea7fb7fca84f4b, type: 2}

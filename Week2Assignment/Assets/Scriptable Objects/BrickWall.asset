@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0210168f4820a3342bf87f3bd698b5c3, type: 3}
   m_Name: BrickWall
   m_EditorClassIdentifier: 
-  hitPoints: 8
+  hitPoints: 10
   onDeathSound: {fileID: 8300000, guid: d51fd34a7b1683a44aa531efc2ac89ae, type: 3}
   material: {fileID: 2100000, guid: faf64c38e4ebad9498555b1529553810, type: 2}
