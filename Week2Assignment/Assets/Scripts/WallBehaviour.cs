@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿//@Author: Teodor Tysklind - Teodor.Tysklind@Futuregames.nu
+
+using UnityEngine;
 
 public class WallBehaviour : Damageable
 {

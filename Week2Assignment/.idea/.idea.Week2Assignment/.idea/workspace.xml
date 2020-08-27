@@ -39,8 +39,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/RayShooterV2.cs" />
         <option value="$PROJECT_DIR$/Assets/AudioPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WallBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RayShooter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CounteractGravity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" />
       </list>
     </option>
   </component>
@@ -84,7 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1598426039070</updated>
       <workItem from="1598426044769" duration="17636000" />
-      <workItem from="1598512599032" duration="11979000" />
+      <workItem from="1598512599032" duration="13270000" />
     </task>
     <servers />
   </component>

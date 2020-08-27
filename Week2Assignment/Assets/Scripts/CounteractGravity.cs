@@ -1,17 +1,21 @@
 ﻿//@Author: Teodor Tysklind - Teodor.Tysklind@Futuregames.nu
+
 using UnityEngine;
 
 public class CounteractGravity : MonoBehaviour
 {
-    float yPosition;
+    private Rigidbody rigidbody;
+    private Vector3 gravitationalVelocity;
 
     void Start()
     {
-        yPosition = transform.position.y;
+        rigidbody = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        transform.position = new Vector3(transform.position.x, yPosition, transform.position.z);
+        //gravitational velocity is fetched every frame in case some funny guy tries to change it in runtime.
+        gravitationalVelocity = Physics.gravity;
+        rigidbody.AddForce(-gravitationalVelocity * rigidbody.mass);
     }
 }

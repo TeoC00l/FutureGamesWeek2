@@ -1,5 +1,6 @@
-﻿using UnityEngine;
+﻿//@Author: Teodor Tysklind - Teodor.Tysklind@Futuregames.nu
 
+using UnityEngine;
 public abstract class Damageable : MonoBehaviour
 {
     [SerializeField] private int maxHitPoints = 10;

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿//@Author: Teodor Tysklind - Teodor.Tysklind@Futuregames.nu
+
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RayShooter : MonoBehaviour
