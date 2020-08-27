@@ -1,17 +1,19 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.ExceptionServices;
 using UnityEngine;
 
 public class RayShooter : MonoBehaviour
 {
     private LinkedList<WallBehaviour> objectsInTrajectory;
-    private bool isShooting = false;
+    
     [SerializeField] private int damage = 10;
-
+    [SerializeField] private AudioClip shootSound;
+    private Animation gunAnimation;
+    
     private void Start()
     {
         //Since neither the walls or shooter moves in this scenario, objects in trajectory only has to be calculated at start instead of at Shoot().
         UpdateTrajectory(Physics.RaycastAll(transform.position, transform.forward, Mathf.Infinity));
+        gunAnimation = GetComponentInChildren<Animation>();
     }
     
     private void Update()
@@ -24,6 +26,21 @@ public class RayShooter : MonoBehaviour
     
     private void Shoot()
     {
+        if (gunAnimation.isPlaying)
+        {
+            return;
+        }
+        
+        if (gunAnimation != null)
+        {
+            gunAnimation.Play();
+        }
+
+        if (shootSound != null)
+        {
+            AudioSource.PlayClipAtPoint(shootSound, transform.position, 1.0f);
+        }
+        
         int remainingDamage = damage;
         
         while (remainingDamage > 0 && objectsInTrajectory.Count > 0)

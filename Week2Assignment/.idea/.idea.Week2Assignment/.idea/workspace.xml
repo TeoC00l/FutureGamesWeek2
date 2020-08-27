@@ -29,6 +29,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Damageable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5DE66FF1-1FCB-4513-8463-255B392B032B/43/093e09f7/LinkedList`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -36,7 +37,9 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/WallBehaviourV2.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RayShooterV2.cs" />
+        <option value="$PROJECT_DIR$/Assets/AudioPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WallBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RayShooter.cs" />
       </list>
     </option>
@@ -81,6 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1598426039070</updated>
       <workItem from="1598426044769" duration="17636000" />
+      <workItem from="1598512599032" duration="11979000" />
     </task>
     <servers />
   </component>
@@ -99,8 +103,15 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="0" width="1616" height="1027" maximized="true" key="dock-window-1" timestamp="1598515352691">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="320" y="0" width="1616" height="1027" maximized="true" key="dock-window-1/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1598515352691" />
   </component>
 </project>

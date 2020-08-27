@@ -1,32 +1,18 @@
 ﻿using UnityEngine;
 
-public class WallBehaviour : MonoBehaviour
+public class WallBehaviour : Damageable
 {
     [SerializeField]private Wall typeOfWall;
-    private int currentHitPoints;
-    AudioSource audioSource;
-    public int CurrentHitPoints { set { currentHitPoints = value; } get { return currentHitPoints; } }
-
 
     private void Start()
     {
-        //TODO set wall to wood if null;
-        GetComponent<Renderer>().material = typeOfWall.material;
-        audioSource = FindObjectOfType<AudioSource>();
-        currentHitPoints = typeOfWall.hitPoints;
-    }
-
-    private void LateUpdate()
-    {
-        if(CurrentHitPoints <= 0)
+        if (typeOfWall == null)
         {
-            Die();
+            typeOfWall =Resources.Load("Scriptable Objects/WoodWall") as Wall;
         }
-    }
-
-    private void Die()
-    {
-        audioSource.PlayOneShot(typeOfWall.onDeathSound);
-        Destroy(gameObject);
+        
+        GetComponent<Renderer>().material = typeOfWall.material;
+        CurrentHitPoints = typeOfWall.hitPoints;
+        onDeathSound = typeOfWall.onDeathSound;
     }
 }
