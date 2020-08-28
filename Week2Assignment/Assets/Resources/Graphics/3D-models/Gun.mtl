@@ -1,0 +1,12 @@
+newmtl Gun
+Kd 0.2264151 0.2264151 0.2264151
+d 1
+
+newmtl Metal
+Kd 0.6603774 0.6603774 0.6603774
+d 1
+
+newmtl Void
+Kd 0 0 0
+d 1
+

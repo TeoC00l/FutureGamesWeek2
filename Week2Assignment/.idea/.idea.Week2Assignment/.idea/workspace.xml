@@ -40,9 +40,9 @@
         <option value="$PROJECT_DIR$/Assets/AudioPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WallBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CounteractGravity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RayShooter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Wall.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Damageable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RayShooter.cs" />
       </list>
     </option>
   </component>
@@ -87,6 +87,7 @@
       <updated>1598426039070</updated>
       <workItem from="1598426044769" duration="17636000" />
       <workItem from="1598512599032" duration="13440000" />
+      <workItem from="1598603159661" duration="1690000" />
     </task>
     <servers />
   </component>

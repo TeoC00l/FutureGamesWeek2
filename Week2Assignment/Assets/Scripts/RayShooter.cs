@@ -83,7 +83,7 @@ public class RayShooter : MonoBehaviour
                 }
             }
             
-            //After every iteration, add smallest object to sorted linked list.
+            //At the end of every iteration, add smallest object to sorted linked list.
             objectsInTrajectory.AddLast(hits[i].collider.gameObject.GetComponent<WallBehaviour>());
         }
     }
